@@ -1,7 +1,7 @@
 # Get random user
 
 This project was created to show you how easy is to create
-a simple application with **Framework Angular (v=9.1.0)**
+a simple application with **Framework Angular (v=10.0.4)**
 using the OPEN API **https://randomuser.me/** to get the users.
 
 You can see the implementation of **TypeScript** in all the variables
