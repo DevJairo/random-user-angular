@@ -1,0 +1,72 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+.user {
+  display: block;
+  max-width: 400px;
+  margin: 40px auto;
+  .card {
+    position: relative;
+    padding: 20px 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 1px rgba(0,0,0,.5);
+    overflow: hidden;
+    text-align: center;
+    z-index: 5;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 130px;
+      top: 0;
+      background: #f9f9f9;
+      border-bottom: 1px solid rgba(0,0,0,.15);
+      z-index: -1;
+    }
+    .avatar {
+      position: relative;
+      background: #fff;
+      padding: 5px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: auto auto 30px;
+      border: 1px solid rgba(0,0,0,.25);
+      &:hover > .btn, .btn:focus {
+        cursor: pointer;
+        top: -20px;
+        border: 0;
+        outline: none;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      img {
+        width: 150px;
+        border-radius: 50%;
+      }
+      .btn {
+        transition: all 0.2s;
+        top: 0px;
+        opacity: 0;
+        position: relative;
+        border: 0;
+        border-radius: 5px;
+        padding: 10px 23px;
+        background: rgba(0, 0, 0, 0.822);
+        color: #fff;
+      }
+    }
+    .btn-event {
+      list-style: none;
+      li {
+        display: inline-block;
+        margin: 2px;
+        cursor: pointer;
+      }
+    }
+  }
+}
