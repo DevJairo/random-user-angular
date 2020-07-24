@@ -4,7 +4,7 @@
       <div *ngIf="user; else elseBlock">
         <div class="avatar">
           <img src="{{avatar}}" alt="">
-          <button class="btn" (click)="getRandom()">New</button>
+          <button class="btn" (click)="getRandom()">Get New</button>
         </div>
         <p>Hi, My {{select.key || 'name'}} is</p>
         <p class="description">{{select.value || user.name}}</p>

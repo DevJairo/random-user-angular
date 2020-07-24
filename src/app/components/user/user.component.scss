@@ -54,26 +54,18 @@ small {
       border-radius: 50%;
       margin: auto auto 30px;
       border: 1px solid rgba(0, 0, 0, 0.25);
-      &:hover > .btn,
-      .btn:focus {
-        cursor: pointer;
-        top: -20px;
-        border: 0;
-        outline: none;
-        opacity: 1;
-        transition: all 0.3s;
-      }
       img {
         width: 150px;
         border-radius: 50%;
       }
-      .btn {
+      .btn,.btn:hover,.btn:focus {
         transition: all 0.2s;
-        top: 0px;
-        opacity: 0;
+        top: -20px;
         position: relative;
         border: 0;
+        outline: none;
         border-radius: 5px;
+        cursor: pointer;
         padding: 10px 23px;
         background: rgba(0, 0, 0, 0.822);
         color: #fff;
