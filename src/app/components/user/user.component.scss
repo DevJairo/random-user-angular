@@ -2,20 +2,30 @@
   max-width: 900px;
   margin: auto;
 }
+small {
+  text-align: center;
+  display: block;
+  color: #6b6b6b;
+  a {
+    outline: none;
+    text-decoration: none;
+    color: #9567ef;
+  }
+}
 .user {
   display: block;
-  max-width: 400px;
+  max-width: 500px;
   margin: 40px auto;
   .card {
     position: relative;
-    padding: 20px 0;
     width: 100%;
     background: #fff;
     border-radius: 3px;
-    box-shadow: 0 0 1px rgba(0,0,0,.5);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     text-align: center;
     z-index: 5;
+    min-height: 400px;
     &::after {
       content: "";
       display: block;
@@ -24,8 +34,16 @@
       height: 130px;
       top: 0;
       background: #f9f9f9;
-      border-bottom: 1px solid rgba(0,0,0,.15);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
       z-index: -1;
+    }
+    & > div {
+      padding: 20px 0;
+    }
+    .description {
+      color: #2c2e31;
+      font-size: 23px;
+      margin: 5px;
     }
     .avatar {
       position: relative;
@@ -35,8 +53,9 @@
       height: 150px;
       border-radius: 50%;
       margin: auto auto 30px;
-      border: 1px solid rgba(0,0,0,.25);
-      &:hover > .btn, .btn:focus {
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      &:hover > .btn,
+      .btn:focus {
         cursor: pointer;
         top: -20px;
         border: 0;
@@ -62,10 +81,52 @@
     }
     .btn-event {
       list-style: none;
+      ul {
+        padding: 0;
+      }
       li {
+        width: 40px;
+        height: 48px;
+        background-size: 378px;
         display: inline-block;
-        margin: 2px;
+        background-position-y: -48px;
+        transition: all .25s ease-out;
+        margin: 10px;
         cursor: pointer;
+        background-image: url("/assets/img/card_icons.png");
+        &.active[data-label="name"] {
+          background-position: 0 -96px;
+        }
+        &[data-label="password"] {
+          background-position: -338px -48px;
+          &.active {
+            background-position: -338px -96px;
+          }
+        }
+        &[data-label="phone"] {
+          background-position: -270px -48px;
+          &.active {
+            background-position: -270px -96px;
+          }
+        }
+        &[data-label="email"] {
+          background-position: -68px -48px;
+          &.active {
+            background-position: -68px -96px;
+          }
+        }
+        &[data-label="birthday"] {
+          background-position: -135px -48px;
+          &.active {
+            background-position: -135px -96px;
+          }
+        }
+        &[data-label="address"] {
+          background-position: -203px -48px;
+          &.active {
+            background-position: -203px -96px;
+          }
+        }
       }
     }
   }

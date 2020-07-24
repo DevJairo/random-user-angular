@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { formatDate } from '@angular/common';
+import { Component, OnInit } from '@angular/core'
+import { UserService } from '../../services/user.service'
+import { formatDate } from '@angular/common'
+import { IUserResponse, IUserData } from '../../models/user'
 
 @Component({
   selector: 'app-user',
@@ -9,29 +10,31 @@ import { formatDate } from '@angular/common';
 })
 export class UserComponent implements OnInit {
   avatar: String
-  user: any
-  select : any
-  constructor(private userService: UserService) { 
+  user: Object
+  select : Object
+  constructor(private userService: UserService) {}
+  ngOnInit(): void {
     this.getRandom()
   }
-  ngOnInit(): void {
-  }
   getRandom(){
-    this.userService.getRandom().subscribe((response: any) => {
-      let data = response.results[0]
-      this.avatar = data.picture.large
+    this.user = null
+    this.userService.getRandom().subscribe((response: IUserResponse) => {
+      const { results } = response
+      const [data] = results
+      const { name, email, phone, picture, location, dob, login }: IUserData = data
+      this.avatar = picture.large
       this.user = {
-        name: `${data.name.first} ${data.name.last}`,
-        email: data.email,
-        birthday: formatDate(data.dob.date, 'dd/mm/yyyy', 'en-US'),
-        address: `${data.location.street.number} ${data.location.street.name}`,
-        phone: data.cell,
-        password: data.login.password
+        name:  `${name.first} ${name.last}`,
+        email: email,
+        birthday: formatDate(dob.date,'dd/mm/yyyy', 'en-US'),
+        address: `${location.street.number} ${location.street.name}`,
+        phone: phone,
+        password: login.password
       }
-      this.select = this.user.name
+      this.select = this.user
     })
   }
-  selectData(setOption: any) {
+  selectData(setOption: Object) {
     this.select = setOption
   }
 }

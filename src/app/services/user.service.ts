@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class UserService {
   ) { }
 
   getRandom() {
-    return this.http.get('https://randomuser.me/api/');
+    return this.http.get('https://randomuser.me/api/')
   }
 
 }
