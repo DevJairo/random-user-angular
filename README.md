@@ -7,7 +7,7 @@ using the OPEN API **https://randomuser.me/** to get the users.
 You can see the implementation of **TypeScript** in all the variables
 and functions that I created. It would be easy to understand.
 
-DEMO : http://jairomachuca.com/randomuser
+DEMO : http://jairomachuca.com/angular/random-user
 
 ## To run the application
 
